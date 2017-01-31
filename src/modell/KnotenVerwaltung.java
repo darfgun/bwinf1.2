@@ -42,8 +42,9 @@ public class KnotenVerwaltung {
 				wertvolleTeilmenge.add(k);
 			}
 		}
-		
-		System.out.println(System.currentTimeMillis() - startTime);
+		System.out.println("Runtime: ");
+		System.out.print(System.currentTimeMillis() - startTime);
+		System.out.print("ms");
 		return wertvolleTeilmenge;
 	}
 	

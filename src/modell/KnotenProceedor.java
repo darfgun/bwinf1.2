@@ -41,8 +41,7 @@ public class KnotenProceedor {
 		if(allEffectiveProceedor == null){
 			allEffectiveProceedor = owner.getKnotenSucceedor().getAllSucceedor();
 		}
-		//wenn es sinnvoll ist "evtlToBeAdded" (sumAllEffectiveProceedor wird dadurch höher), fügt er evtlToBeAdded hinzu
-		//und ruft die Methoden für das nachfolgende KnotenProceedor auf
+
 		//Rekursion
 		if(proceedor != null){
 			double sumVorher = sumAllEffectiveProceedor();
@@ -57,7 +56,7 @@ public class KnotenProceedor {
 			
 			double sumDanach = sumAllEffectiveProceedor();
 
-			if(sumDanach <= sumVorher){//rueckgaengig machen 
+			if(sumDanach <= sumVorher){//rueckgaengig machen, abbrechen dieses Pfades, wenn er nicht verbessert 
 				allEffectiveProceedor = allEffectiveProceedorVorher;
 				return;
 			}
