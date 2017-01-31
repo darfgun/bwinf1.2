@@ -31,13 +31,11 @@ public class TxtToKnoten {
 			generateKnoten();
 			addKanten();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
 	private void generateKnotenV() throws IOException{
-		//TODO
 		reader.	readLine();
 		String anzahlString = reader.readLine();
 		int anzahlInt = Integer.valueOf(anzahlString);

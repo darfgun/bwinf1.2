@@ -16,11 +16,13 @@ public class Controller implements ActionListener
     boolean initiated;
     private KnotenToTxt toTxtConvert;
 
+    private String pathOfFile;
+    
     public Controller(View pView)
     {
         view = pView;
         initiated = false;
-      
+        pathOfFile = null;
     }
 
     public void actionPerformed (ActionEvent e)
@@ -38,7 +40,6 @@ public class Controller implements ActionListener
      }
     
     public void oeffnen(){
-    	String pathOfFile = null; 
     	JFileChooser fc = new JFileChooser();
 		int returnVal = fc.showOpenDialog(null);
 		
@@ -72,6 +73,7 @@ public class Controller implements ActionListener
     	toTxtConvert = new KnotenToTxt(knotenV);
     	ArrayList<String> output = toTxtConvert.getOutput();
     	setProgress(output);
+    	TxtToFile.writeDocument(output, pathOfFile);
     }
   
     public void setProgress(ArrayList<String> output){
