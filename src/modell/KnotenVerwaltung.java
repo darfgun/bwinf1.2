@@ -64,6 +64,9 @@ public class KnotenVerwaltung {
 		boolean kb;
 		for(Knoten k : alleKnoten){
 			worthyKnotenB = k.getWorthyKnoten();
+			if(worthyKnotenB == null)
+				continue;
+			
 			for(int i = 0; i < worthyKnotenB.length; i++){
 				kb = worthyKnotenB[i];
 				
