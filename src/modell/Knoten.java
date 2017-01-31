@@ -41,15 +41,17 @@ public class Knoten{
 			return knotenSucceedor.getAllSucceedor();
 		}
 		
-		boolean[] worthyKnoten = new boolean[alleKnoten.length];
+		
 		
 		//nur wenn es knotenSucceedor.getSumAllSucceedor() < 0, kann der hier abgehandelte Grenzfall auftreten
 		if(knotenSucceedor.getSumAllSucceedor() < 0 && knotenProceedor.isEffectiveSet()){
+			boolean[] worthyKnoten = new boolean[alleKnoten.length];
 			addArrayBToArrayB(worthyKnoten, knotenSucceedor.getAllSucceedor());
 			addArrayBToArrayB(worthyKnoten, knotenProceedor.getAllEffectiveProceedor());
+			return worthyKnoten; 
 		}
 		
-		return worthyKnoten; 
+		return null;
 	}
 	
 
